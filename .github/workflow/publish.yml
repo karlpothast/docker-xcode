@@ -1,0 +1,18 @@
+name: publish
+on: [push]
+jobs:
+publish-xcode-docker-image:
+runs-on: archlinux
+steps:
+- uses: actions/checkout@v2
+- name: Login to GitHub Container Registry
+uses: docker/login-action@v1
+with:
+registry: ghcr.io
+username: ${{ github.actor }}
+password: ${{ secrets.GITHUB_TOKEN }}
+- name: Build the docker image
+run: |
+       docker build . --tag ghcr.io/karlpothast/docker-xcode:latest
+       docker run ghcr.io/karlpothast/docker-xcode:latest
+       docker push ghcr.io/karlpothast/docker-xcode:latest

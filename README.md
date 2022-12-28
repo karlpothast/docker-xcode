@@ -1,4 +1,4 @@
-# *** working o compressing the image right now - will have updates soon
+# *** working on compressing the image right now - will have updates soon
 
 # Run XCode on Linux 
 Docker image created from sickcodes/Docker-OSX latest build with XCode, XCode Command Line Tools, Brew and iOS Simuator pre-installed.
